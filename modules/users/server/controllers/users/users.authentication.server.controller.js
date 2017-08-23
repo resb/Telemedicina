@@ -76,6 +76,8 @@ exports.signin = function (req, res, next) {
   })(req, res, next);
 };
 
+
+
 /**
  * Signout
  */
@@ -165,7 +167,13 @@ exports.saveOAuthUserProfile = function (req, providerUserProfile, done) {
               email: providerUserProfile.email,
               profileImageURL: providerUserProfile.profileImageURL,
               provider: providerUserProfile.provider,
-              providerData: providerUserProfile.providerData
+              providerData: providerUserProfile.providerData,
+              fecnac: providerUserProfile.fecnac,
+              peso: providerUserProfile.peso,
+              altura: providerUserProfile.altura,
+              tarjeta:providerUserProfile.tarjeta,
+              alergias: providerUserProfile.alergias,
+              habitosalimenticios:providerUserProfile.habitos,
             });
 
             // And save the user

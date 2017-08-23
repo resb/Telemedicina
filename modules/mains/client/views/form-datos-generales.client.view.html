@@ -37,11 +37,11 @@
                 <div class="col-sm-9">
                   <h2 class="title"><img src="/modules/mains/client/img/TelHealth_47.png"><span>DATOS GENERALES</span></h2>
                   <ul>
-                    <li><strong>Nombre:</strong>Seminario Lopez</li>
-                    <li><strong>Fecha de nacimiento:</strong>14 de Julio de 1982</li>
-                    <li><strong>Sexo:</strong>Masculino</li>
-                    <li><strong>Estatura:</strong>1.77 mt</li>
-                    <li><strong>Peso</strong>78 kg</li>
+                    <li><strong>Nombre:</strong><strong ng-bind="' ' + vm.authentication.user.firstName + ' ' + vm.authentication.user.lastName"></strong></li>
+                    <li><strong>Fecha de nacimiento:&nbsp;</strong><strong ng-bind="vm.authentication.user.fecnac | date:'dd/MM/yyyy'"></strong></li>
+                    <li><strong>Sexo:</strong><strong ng-bind="' ' + vm.authentication.user.sexo"></strong></li>
+                    <li><strong>Estatura:</strong><strong ng-bind="' ' + vm.authentication.user.altura"></strong></li>
+                    <li><strong>Peso:</strong><strong ng-bind="' ' + vm.authentication.user.peso"></strong></li>
                   </ul>
                   <div class="text-right">
                     <button class="btn btn-danger">Editar perfil<i class="fa fa-chevron-right"></i></button>

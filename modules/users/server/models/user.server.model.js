@@ -112,7 +112,46 @@ var UserSchema = new Schema({
     type: String,
     trim: true,
     default: '',
-  }
+  },
+  //modificaciones en la estructura de MongoDB
+  peso:{
+    type:String,
+    trim:true,
+    default:'',
+  },
+  sexo:{
+    type:String,
+    trim:true,
+    default:'',
+  },
+  altura:{
+    type:String,
+    trim:true,
+    default:'',
+  },
+  fecnac:{
+    type: Date,
+    default: Date.now
+  },
+  tarjeta:
+    { nombre        : {type:String,default:''},
+      nrotarjeta    : {type:String,default:''},
+      codseguridad  : {type:String,default:''},
+      mesexpiracion : {type:String,default:''},
+      anioexpiracion: {type:String,default:''}
+    },
+  alergias: 
+    [{ tipodealergias  : {type:String,default:''}, 
+      sintomas        : {type:String,default:''}, 
+      tratamiento     : {type:String,default:''}
+    }],
+
+  habitos:
+    [{ habitosalimenticios : {type:String,default:''},
+      habitosfisicos      : {type:String,default:''}
+    }]    
+  
+  //=============================================
 });
 
 /**
@@ -123,7 +162,6 @@ UserSchema.pre('save', function (next) {
     this.salt = crypto.randomBytes(16).toString('base64');
     this.password = this.hashPassword(this.password);
   }
-
   next();
 });
 

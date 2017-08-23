@@ -73,7 +73,10 @@
                 <div class="col-sm-9">
                   <h2 class="title"><img src="img/TelHealth_47.png"><span>DATOS GENERALES</span></h2>
                   <ul>
-                    <li><strong>Nombre:</strong>Seminario Lopez</li>
+                      <div ng-bind="user.displayName">
+                          <div class="col-md-3"><strong>First Name</strong></div>
+                          <div class="col-md-6" ng-bind="user.firstName"></div>
+                    <li><strong>Nombre:</strong><div ng-bind="authentication.user.displayName"></div></li>
                     <li><strong>Fecha de nacimiento:</strong>14 de Julio de 1982</li>
                     <li><strong>Sexo:</strong>Masculino</li>
                     <li><strong>Estatura:</strong>1.77 mt</li>
