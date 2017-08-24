@@ -100,6 +100,19 @@
           pageTitle: 'Informacion'
         }
       })
+      .state('mains.editar-informacion', {
+        url: '/editar-informacion',
+        templateUrl: 'modules/mains/client/views/form-editar-datos-generales.client.view.html',
+        controller: 'MainsController',
+        controllerAs: 'vm',
+        resolve: {
+          mainResolve: newMain
+        },
+        data: {
+          roles: ['user', 'admin', 'doctor'],
+          pageTitle: 'editar informacion'
+        }
+      })
       .state('mains.atencion', {
         url: '/atencion',
         templateUrl: 'modules/mains/client/views/form-atencion.client.view.html',
