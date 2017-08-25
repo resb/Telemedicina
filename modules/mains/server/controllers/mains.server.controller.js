@@ -57,12 +57,7 @@ exports.read = function(req, res) {
 };
 
 
-write=function(request,reponse){
-  app.get('/writePaciente',function (request,response) {
-    
-  })
-  response.send('http://www.susalud.org.pe');
-}
+
 /**
  * Update a Main
  */
