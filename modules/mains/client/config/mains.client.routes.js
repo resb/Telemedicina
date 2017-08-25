@@ -106,7 +106,7 @@
         controller: 'MainsController',
         controllerAs: 'vm',
         resolve: {
-          mainResolve: getMain,newMain
+          mainResolve: newMain
         },
         data: {
           roles: ['user', 'admin', 'doctor'],

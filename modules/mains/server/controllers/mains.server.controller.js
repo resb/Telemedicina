@@ -27,7 +27,7 @@ exports.create = function(req, res) {
     }
   });
 };
-
+//Procedimiento para crear los meeting 
 exports.createMeeting = function(req, res) {
   var meeting = new Meeting(req.body);
   meeting.user = req.user;
