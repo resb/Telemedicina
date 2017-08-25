@@ -100,13 +100,13 @@
           pageTitle: 'Informacion'
         }
       })
-      .state('mains.editar-informacion', {
-        url: '/editar-informacion',
+      .state('mains.edinformacion', {
+        url: '/edinformacion',
         templateUrl: 'modules/mains/client/views/form-editar-datos-generales.client.view.html',
         controller: 'MainsController',
         controllerAs: 'vm',
         resolve: {
-          mainResolve: newMain
+          mainResolve: getMain,newMain
         },
         data: {
           roles: ['user', 'admin', 'doctor'],
