@@ -56,8 +56,6 @@ exports.read = function(req, res) {
   res.jsonp(main);
 };
 
-
-
 /**
  * Update a Main
  */
