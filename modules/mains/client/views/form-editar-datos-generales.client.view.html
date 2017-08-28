@@ -1,4 +1,5 @@
-    <main id="main-section">     
+
+<main id="main-section">     
       <nav class="open" id="main-menu" style="padding-top: 15px">
         <ul>
           <li class="header text-center">MENÚ</li>
@@ -57,7 +58,10 @@
                           <div class="form-group" show-errors>
                             <label class="control-label" for="FechaNacimiento">Fecha de Nacimiento</label>
                             <div class="controls">
-                              <input class="form-control" type="text" name="txtFechaNacimiento" ng-model="vm.authentication.user.fecnac" id="txtfechaNacimiento" required />
+                                  <!--  <input name="fecha" type="date" ng-model="vm.authentication.user.fecnac" id="fecha" class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" placeholder="Fecha" 
+                                    placeholder="yyyy-MM-dd" min="1960-01-01" max="2100-12-31"
+                                    required="">                                 -->
+                              <input class="form-control" type="text" name="txtFechaNacimiento" ng-model="vm.authentication.user.fecnac | date: 'dd-MM-yyyy'" id="txtfechaNacimiento" required />
                               <div ng-messages="userForm.roles.$error" role="alert">
                                 <p class="help-block error-text" ng-message="required">At least one datebirth is required.</p>
                               </div>
@@ -84,33 +88,37 @@
                           <div class="form-group" show-errors>
                             <label class="control-label" for="sexo">Sexo</label>
                             <div class="controls">
-                              <input class="form-control" type="text" name="txtAltura" ng-model="vm.authentication.user.altura" id="txtAltura" required />
+                              <input class="form-control" type="text" name="txtSexo" ng-model="vm.authentication.user.sexo" id="txtSexo" required />
+                              <label for="">
+                              <input type="radio" ng-model="vm.authentication.user.sexo" value="Masculino" ng-value="Masculino">
+                                Masculino
+                            </label>
+                            <label for="">
+                              <input type="radio" ng-model="vm.authentication.user.sexo" value="Femenino" ng-value="Femenino">
+                               Femenino
+                            </label>
                               <div ng-messages="userForm.roles.$error" role="alert">
                                 <p class="help-block error-text" ng-message="required">At least one height is required.</p>
                               </div>
                             </div>
                           </div>
+                          <div class="form-group" show-errors>
+                            <label class="control-label" for="email">Email</label>
+                            <div class="controls">
+                              <input class="form-control" type="text" name="txtEmail" ng-model="vm.authentication.user.email" id="txtEmail" required />
+                              <div ng-messages="userForm.email.$error" role="alert">
+                                <p class="help-block error-text" ng-message="required">At least one email is required.</p>
+                              </div>
+                            </div>
+                          </div>
                           <div class="form-group">
-                            <input type="submit" value="Update" class="btn btn-info">
+                            <input type="submit" value="Update" class="btn btn-info" ui-sref="mains.informacion">
                           </div>
                           <div ng-show="error" class="text-danger">
                             <strong ng-bind="error"></strong>
                           </div>
                     </fieldset>
                   </form>
-
-                  <!-- <ul>
-                    <li><strong>Nombre:</strong>
-                      <input type="text" id="nombre" name="nombre" class="form-control" ng-model="credentials.nombre" placeholder="Ingresa el nombre">
-                     <strong ng-bind="' ' + vm.authentication.user.firstName + ' ' + vm.authentication.user.lastName"></strong></li>
-                    <li><strong>Fecha de nacimiento:&nbsp;</strong><strong ng-bind="vm.authentication.user.fecnac | date:'dd/MM/yyyy'"></strong></li>
-                    <li><strong>Sexo:</strong><strong ng-bind="' ' + vm.authentication.user.sexo"></strong></li>
-                    <li><strong>Estatura:</strong><strong ng-bind="' ' + vm.authentication.user.altura"></strong></li>
-                    <li><strong>Peso:</strong><strong ng-bind="' ' + vm.authentication.user.peso"></strong></li>
-                  </ul> -->
-                  <div class="text-right">
-                    <button class="btn btn-danger">Editar perfil<i class="fa fa-chevron-right"></i></button>
-                  </div>
                 </div>
               </div>
             </div>
