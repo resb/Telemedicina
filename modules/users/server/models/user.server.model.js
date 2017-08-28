@@ -25,6 +25,48 @@ var validateLocalStrategyEmail = function (email) {
 };
 
 /**
+ * User Tarjeta Schema
+ */
+
+var tarjetaSchema = new mongoose.Schema({
+  nombre: {
+    type: String,
+    default: ''
+  },
+  nrotarjeta: {
+    type: String,
+    default: ''
+  },
+  codseguridad: {
+    type: String,
+    default: ''
+  },
+  mesexpiracion: {
+    type: String,
+    default: ''
+  },
+  anioexpiracion: {
+    type: String,
+    default: ''
+  }
+})
+/**
+ * User alergiaSchema
+ */
+
+ var alergiaSchema = new mongoose.Schema({
+    tipodealergias: { type: String, default: '' },
+    sintomas: { type: String, default: '' },
+    tratamiento: { type: String, default: '' }
+ })
+/**
+ * User habitos Schema
+ */
+var habitosSchema=new mongoose.Schema({
+  habitosalimenticios: { type: String, default: '' },
+  habitosfisicos: { type: String, default: '' }
+})
+/**
  * User Schema
  */
 var UserSchema = new Schema({
@@ -114,43 +156,28 @@ var UserSchema = new Schema({
     default: '',
   },
   //modificaciones en la estructura de MongoDB
-  peso:{
-    type:String,
-    trim:true,
-    default:'',
+  peso: {
+    type: String,
+    trim: true,
+    default: '',
   },
-  sexo:{
-    type:String,
-    trim:true,
-    default:'',
+  sexo: {
+    type: String,
+    trim: true,
+    default: '',
   },
-  altura:{
-    type:String,
-    trim:true,
-    default:'',
+  altura: {
+    type: String,
+    trim: true,
+    default: '',
   },
-  fecnac:{
+  fecnac: {
     type: Date,
     default: Date.now
   },
-  tarjeta:
-    { nombre        : {type:String,default:''},
-      nrotarjeta    : {type:String,default:''},
-      codseguridad  : {type:String,default:''},
-      mesexpiracion : {type:String,default:''},
-      anioexpiracion: {type:String,default:''}
-    },
-  alergias: 
-    [{ tipodealergias  : {type:String,default:''}, 
-      sintomas        : {type:String,default:''}, 
-      tratamiento     : {type:String,default:''}
-    }],
-
-  habitos:
-    [{ habitosalimenticios : {type:String,default:''},
-      habitosfisicos      : {type:String,default:''}
-    }]    
-  
+  tarjeta:[tarjetaSchema],
+  alergias:[alergiasSchema],
+  habitos:[habitosSchema],
   //=============================================
 });
 

@@ -142,6 +142,8 @@
       .state('mains.tarjeta', {
         url: '/registrarTarjeta',
         templateUrl: 'modules/mains/client/views/form-tarjeta.client.view.html',
+        controller: 'MainsController',
+        controllerAs: 'vm',
         resolve: {
           mainResolve: newMain
         },

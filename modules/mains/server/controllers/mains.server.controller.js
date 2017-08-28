@@ -75,6 +75,7 @@ exports.update = function(req, res) {
   });
 };
 
+
 /**
  * Delete an Main
  */
@@ -92,6 +93,8 @@ exports.delete = function(req, res) {
   });
 };
 
+
+
 /**
  * List of Mains
  */
@@ -106,6 +109,8 @@ exports.list = function(req, res) {
     }
   });
 };
+
+
 
 /**
  * Main middleware
