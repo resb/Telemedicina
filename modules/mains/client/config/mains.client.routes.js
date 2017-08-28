@@ -123,7 +123,7 @@
         },
         data: {
           roles: ['user', 'admin', 'doctor'],
-          pageTitle: 'Mis Citas Vituales'
+          pageTitle: 'Mis Citas Virtuales'
         }
       })
       .state('mains.atencionCita', {
