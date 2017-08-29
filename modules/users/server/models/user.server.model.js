@@ -60,12 +60,44 @@ var tarjetaSchema = new mongoose.Schema({
     tratamiento: { type: String, default: '' }
  })
 /**
- * User habitos Schema
+ * User habitosA Schema
  */
-var habitosSchema=new mongoose.Schema({
-  habitosalimenticios: { type: String, default: '' },
-  habitosfisicos: { type: String, default: '' }
+var habitosASchema=new mongoose.Schema({
+  nombre: { type: String, default: '' },
 })
+/**
+ * User habitosF Schema
+ */
+var habitosFSchema=new mongoose.Schema({
+  nombre: { type: String, default: '' },
+})
+/**
+ * User enfermedadesPre Schema
+ */
+var enfermedadesPreSchema =new mongoose.Schema({
+  nombre:{type: String, default:''}
+})
+
+/**
+ * User tratamientosA Schema
+ */
+
+ var tratamientosASchema = new mongoose.Schema({
+   nombre:{type:String,default:''}
+ })
+
+ /**
+  *User  OperacionesR Schema
+  */
+  var OperacionesRSchema = new mongoose.Schema({
+    nombre:{type:String,default:''}
+  })
+  /**
+   *User HistoriaF Schema
+   */
+  var historiaFSchema = new mongoose.Schema({
+    nombre:{type:String,default:''}
+  })
 /**
  * User Schema
  */
@@ -176,9 +208,13 @@ var UserSchema = new Schema({
     default: Date.now
   },
   tarjeta:[tarjetaSchema],
-  alergias:[alergiasSchema],
-  habitos:[habitosSchema],
-  //=============================================
+  alergias:[alergiaSchema],
+  habitosA:[habitosASchema],
+  habitosF:[habitosFSchema],
+  enfermedadesPre:[enfermedadesPreSchema],
+  tratamientosA:[tratamientosASchema] ,
+  OperacionesR:[OperacionesRSchema],
+  historiaF:[historiaFSchema]
 });
 
 /**

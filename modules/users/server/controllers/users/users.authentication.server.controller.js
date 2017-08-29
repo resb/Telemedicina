@@ -173,7 +173,13 @@ exports.saveOAuthUserProfile = function (req, providerUserProfile, done) {
               altura: providerUserProfile.altura,
               tarjeta:providerUserProfile.tarjeta,
               alergias: providerUserProfile.alergias,
-              habitosalimenticios:providerUserProfile.habitos,
+              habitosA:providerUserProfile.habitosA,
+              habitosF:providerUserProfile.habitosF,
+              enfermedadesPre:providerUserProfile.enfermedadesPre,
+              tratamientosA:providerUserProfile.tratamientosA,
+              OperacionesR:providerUserProfile.OperacionesR,
+              historiaF:providerUserProfile.historiaF
+
             });
 
             // And save the user
