@@ -34,7 +34,12 @@
 
         <div class="form-group" show-errors>
           <label for="Lfecha">Fecha de Nacimiento</label>
-          <input name="fecha" type="date" ng-model="user.fecnac" id="fecha" class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" placeholder="Fecha" required="">
+    
+          <input type="text"  class="form-control" 
+          datepicker-popup="dd-MM-yyyy" ng-model="user.fecnac" is-open="opened" 
+          min-date="minDate"  datepickeroptions="dateOptions"
+          date-disabled="disabled(date, mode)" ng-required="true"> 
+
           <div ng-messages="userForm.fecnac.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Username is required.</p>
           </div>
